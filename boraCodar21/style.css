@@ -24,4 +24,16 @@
 
 body {
   font-size: 1.6rem;
+
+  background-color: var(--color-background-color);
+  color: var(--color-text-color-primary);
+}
+
+#app {
+  height: 100vh;
+  max-width: 42.8rem;
+  margin-left: auto;
+  background-color: var(--color-surface-color);
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
 }
