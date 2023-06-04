@@ -53,6 +53,14 @@ main {
   padding: 3.2rem;
 }
 
+.item img {
+  width: 10.4rem;
+  height: 10.4rem;
+  object-fit: cover;
+  border-radius: .8rem;
+}
+
+/* footer */
 footer {
   padding: 3.2rem;
   border-top: 1px solid var(--color-stroke-color);
