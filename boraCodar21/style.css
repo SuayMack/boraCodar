@@ -10,7 +10,7 @@
 	--color-background-color: #09090b;
 
   font-family: Inter;
-  font-size: 65.5%;
+  font-size: 62.5%;
 }
 
 * {
@@ -32,9 +32,9 @@ body {
 #app {
   height: 100vh;
   max-width: 42.8rem;
-  margin-left: auto;
-  background-color: var(--color-surface-color);
+  margin-left: auto;  
   display: grid;
+  background-color: var(--color-surface-color);
   grid-template-rows: max-content 1fr max-content;
 }
 
@@ -51,6 +51,30 @@ header {
 /*main*/
 main {
   padding: 3.2rem;
+  display: grid;
+  place-content: start;
+  gap: 4.8rem;
+  overflow-y: scroll;
+}
+
+
+/* Não funciona no Firefox */
+/* largura do scroll */
+::-webkit-scrollbar {
+  width: .6rem;
+}
+/* cor do scroll */
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-stroke-color);
+}
+/* cor de fundo do scroll */
+::-webkit-scrollbar-track {
+  background-color: var(--color-background-color);
+}
+
+.item {
+  display: flex;
+  gap: 2.4rem;
 }
 
 .item img {
@@ -60,19 +84,72 @@ main {
   border-radius: .8rem;
 }
 
+.price-qty {
+  margin-top: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-weight: 700;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+}
+
+.qty span,
+.qty button {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.qty button {
+  border-radius: .8rem;
+  border: 1px solid white;
+  background-color: transparent;
+  color: var(--color-brand-color-light);
+  font-size: 1.6rem;
+}
+
+.qty button.add {
+  border-color: var(--color-brand-color-light);
+}
+.qty button.add:hover {
+  background-color: var(--color-brand-color-light);
+  color: var(--color-text-color-primary);
+}
+.qty button.minus {
+  border-color: var(--color-stroke-color);
+}
+.qty button.minus:hover {
+  color: var(--color-text-color-primary);
+  background-color: var(--color-brand-color-light);
+}
+
+.item .title {
+  color: var(--color-text-color-secondary);
+}
+
 /* footer */
 footer {
   padding: 3.2rem;
   border-top: 1px solid var(--color-stroke-color);
 }
 
-.total {
+footer .total {
   display: flex;
   justify-content: space-between;
   font-size: 2rem;
 }
 
-.coupon {
+footer .coupon {
   margin-top: 1.6rem;
   color: var(--color-brand-color-light);
   display: flex;
@@ -81,7 +158,7 @@ footer {
   gap: .8rem;
 }
 
-.coupon i {
+footer .coupon i {
   font-size: 2rem;
 }
 
